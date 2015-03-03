@@ -6,15 +6,15 @@
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 10:54:28 by dvolberg          #+#    #+#             */
-/*   Updated: 2015/03/03 03:32:04 by dvolberg         ###   ########.fr       */
+/*   Updated: 2015/03/03 05:25:31 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-static int			youwin(t_env *env)
+static int	youwin(t_env *env)
 {
-	int				ch;
+	int		ch;
 
 	ch = 0;
 	wclear(stdscr);
@@ -41,7 +41,7 @@ static int			youwin(t_env *env)
 	return (0);
 }
 
-static void		ft_do(t_env *env)
+static void	ft_do(t_env *env)
 {
 	env->y_max = env->y_new;
 	env->x_max = env->x_new;
@@ -49,7 +49,7 @@ static void		ft_do(t_env *env)
 	ft_draw_grid(env->tab);
 }
 
-static int			ft_pour_le_win_mec(t_env *env)
+static int	ft_pour_le_win_mec(t_env *env)
 {
 	if (env->win == 0)
 		env->status = youwin(env);

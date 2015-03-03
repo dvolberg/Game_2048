@@ -5,44 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/03/01 22:16:59 by gbadi             #+#    #+#              #
-#    Updated: 2015/03/03 03:31:33 by dvolberg         ###   ########.fr        #
+#    Created: 2015/03/01 22:16:59 by dvolberg          #+#    #+#              #
+#    Updated: 2015/03/03 06:27:35 by dvolberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -lncurses
 
-SOURCE = main.c ft_print_tout.c display.c draw.c ft_get_pair.c\
-		game.c horizontal.c input.c vertical.c \
-		tab.c play.c\
-		ascii/ascii_0.c\
-		ascii/ascii_1.c\
-		ascii/ascii_2.c\
-		ascii/ascii_3.c\
-		ascii/ascii_4.c\
-		ascii/ascii_5.c\
-		ascii/ascii_6.c\
-		ascii/ascii_7.c\
-		ascii/ascii_8.c\
-		ascii/ascii_9.c\
-		ascii/print_1024.c\
-		ascii/print_128.c\
-		ascii/print_16.c\
-		ascii/print_2.c\
-		ascii/print_2048.c\
-		ascii/print_256.c\
-		ascii/print_32.c\
-		ascii/print_4.c\
-		ascii/print_4096.c\
-		ascii/print_512.c\
-		ascii/print_64.c\
-		ascii/print_8.c\
-		ascii/gameover.c\
-		ascii/youwin.c\
-		ascii/color.c\
-		ascii/printtitle.c
+SOURCE = main.c ft_print_tout.c display.c draw.c ft_get_pair.c game.c \
+		input.c merge_bottom.c merge_left.c merge_right.c merge_top.c \
+		move_bottom.c move_left.c move_right.c ascii/color.c ascii/printtitle.c\
+		move_top.c tab.c play.c ascii/ascii_0.c ascii/ascii_1.c ascii/ascii_2.c\
+		ascii/ascii_3.c ascii/ascii_4.c ascii/ascii_5.c ascii/ascii_6.c\
+		ascii/ascii_8.c ascii/ascii_9.c ascii/print_1024.c ascii/print_128.c\
+		ascii/print_16.c ascii/print_2.c ascii/print_2048.c ascii/print_256.c\
+		ascii/print_32.c ascii/print_4.c ascii/print_4096.c ascii/print_512.c\
+		ascii/print_64.c ascii/print_8.c ascii/gameover.c ascii/youwin.c
 
 
 SRCO = $(SOURCE:%.c=%.o)
@@ -74,10 +54,10 @@ $(NAME): $(SRCO)
 
 
 	@make -C libft
-	@$(CC) $(CFLAGS) $(SOURCE) -L./libft/ -lft -o $(NAME) -I./includes/ -lncurses
+	@$(CC) $(CFLAGS) $(SOURCE) -L./libft/ -lft -o $(NAME) -I./includes/
 
 %.o: %.c ./includes/game.h
-	@$(CC) -o $@  -I includes/ -c $< $(FLAGS)
+	@$(CC) -o $@  -I includes/ -c $<
 
 clean:
 	@make -C libft clean

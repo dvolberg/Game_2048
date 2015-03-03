@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/01 01:34:36 by gbadi             #+#    #+#             */
-/*   Updated: 2015/03/03 03:27:26 by dvolberg         ###   ########.fr       */
+/*   Created: 2015/03/01 01:34:36 by dvolberg          #+#    #+#             */
+/*   Updated: 2015/03/03 06:27:25 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ typedef struct			s_env
 	size_t				score;
 	size_t				highscore;
 	char				pop;
+	int					y;
+	int					x;
 	int					y_new;
 	int					x_new;
 	int					y_max;

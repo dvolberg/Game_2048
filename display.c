@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/27 22:20:56 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/03 03:49:50 by dvolberg         ###   ########.fr       */
+/*   Created: 2015/02/27 22:20:56 by dvolberg          #+#    #+#             */
+/*   Updated: 2015/03/03 05:24:20 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,31 @@ static void	ft_print_ascii(int y, int x, int val)
 		ascii_2048(y, x);
 }
 
-void	ft_putnbr_to_grid(int y_max, int x_max, int **tab)
+static void print(int y, int x, int val)
+{
+	if (!ft_print_tout(val, x, y))
+		ft_print_ascii(y, x, val);
+}
+
+static void nop(void)
+{
+	int ch;
+
+	ch = getch();
+	wclear(stdscr);
+	mvprintw(1, 1, "Really Nigga ?! Press Ctrl + C to quit");
+	endwin();
+	if (ch == 27)
+		exit(-1);
+}
+
+static void	norme(int *x, int *j, int increm)
+{
+	*x += increm;
+	(*j)++;
+}
+
+void		ft_putnbr_to_grid(int y_max, int x_max, int **tab)
 {
 	int		x;
 	int		y;
@@ -56,19 +80,11 @@ void	ft_putnbr_to_grid(int y_max, int x_max, int **tab)
 			if (tab[i][j] != 3)
 			{
 				if (y_max >= 40 || x_max >= 40)
-				{
-					if (!ft_print_tout(tab[i][j], x, y))
-						ft_print_ascii(y, x, tab[i][j]);
-				}
+					print(y, x, tab[i][j]);
 				else
-				{
-					mvprintw(1, 1, "Serieusement !!");
-					endwin();
-					exit(-1);
-				}
+					nop();
 			}
-			x += (x_max / SIZE);
-			j++;
+			norme(&x, &j, x_max / SIZE);
 		}
 		i++;
 		y += (y_max / SIZE);

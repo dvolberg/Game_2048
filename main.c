@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 03:23:38 by gbadi             #+#    #+#             */
-/*   Updated: 2015/03/03 02:47:56 by dvolberg         ###   ########.fr       */
+/*   Created: 2015/02/28 03:23:38 by dvolberg          #+#    #+#             */
+/*   Updated: 2015/03/03 06:27:41 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static void		menu(int x, int y, t_env *env)
 	(void)y;
 }
 
-static int			ft_pow(int b, int n)
+static int		ft_pow(int b, int n)
 {
 	if (n == 0)
 		return (1);
@@ -73,7 +73,7 @@ static int			ft_pow(int b, int n)
 		return (b * ft_pow(b, n - 1));
 }
 
-static int			ft_check_win_value(void)
+static int		ft_check_win_value(void)
 {
 	int		i;
 
@@ -87,7 +87,7 @@ static int			ft_check_win_value(void)
 	return (0);
 }
 
-int			main(void)
+int				main(void)
 {
 	t_env	*env;
 	int		y_max;

@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   move_bottom.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 15:39:21 by dvolberg          #+#    #+#             */
-/*   Updated: 2015/03/03 06:27:22 by dvolberg         ###   ########.fr       */
+/*   Created: 2015/03/01 00:27:09 by dvolberg          #+#    #+#             */
+/*   Updated: 2015/03/03 06:29:56 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "game.h"
 
-void	*ft_memalloc(size_t size)
+int					**move_bottom(t_env *env)
 {
-	void	*dst;
+	int				i;
+	int				j;
+	int				k;
 
-	dst = NULL;
-	if (size)
+	j = -1;
+	while (++j < SIZE)
 	{
-		dst = malloc(sizeof(dst) * size);
-		if (dst)
-			ft_bzero(dst, size);
-		else
-			return (NULL);
+		i = SIZE - 1;
+		while (--i >= 0)
+		{
+			k = 0;
+			while (i + k + 1 < SIZE
+				&& env->tab[i][j] != EMPTY && env->tab[i + k + 1][j] == EMPTY)
+				k++;
+			if (k)
+			{
+				env->pop = k;
+				env->tab[i + k][j] = env->tab[i][j];
+				env->tab[i][j] = EMPTY;
+			}
+		}
 	}
-	return (dst);
+	return (env->tab);
 }

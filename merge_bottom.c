@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   merge_bottom.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 15:39:21 by dvolberg          #+#    #+#             */
-/*   Updated: 2015/03/03 06:27:22 by dvolberg         ###   ########.fr       */
+/*   Created: 2015/03/01 00:27:09 by dvolberg          #+#    #+#             */
+/*   Updated: 2015/03/03 06:27:32 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "game.h"
 
-void	*ft_memalloc(size_t size)
+int					**merge_bottom(t_env *env)
 {
-	void	*dst;
+	int				i;
+	int				j;
 
-	dst = NULL;
-	if (size)
+	j = -1;
+	while (++j < SIZE)
 	{
-		dst = malloc(sizeof(dst) * size);
-		if (dst)
-			ft_bzero(dst, size);
-		else
-			return (NULL);
+		i = SIZE;
+		while (--i > 0)
+		{
+			if (env->tab[i][j] != EMPTY && env->tab[i - 1][j] == env->tab[i][j])
+			{
+				env->tab[i][j] *= 2;
+				env->score += env->tab[i][j];
+				env->tab[i - 1][j] = EMPTY;
+				env->pop = 1;
+			}
+		}
 	}
-	return (dst);
+	return (env->tab);
 }

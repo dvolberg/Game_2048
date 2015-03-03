@@ -6,13 +6,13 @@
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 23:41:12 by dvolberg          #+#    #+#             */
-/*   Updated: 2015/03/03 02:47:26 by dvolberg         ###   ########.fr       */
+/*   Updated: 2015/03/03 05:23:02 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-static void		part2(void)
+static void	part2(void)
 {
 	attron(COLOR_PAIR(25));
 	mvprintw(9, (COLS / 2) - 31,

@@ -6,7 +6,7 @@
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 10:45:11 by dvolberg          #+#    #+#             */
-/*   Updated: 2015/03/03 02:43:59 by dvolberg         ###   ########.fr       */
+/*   Updated: 2015/03/03 05:24:39 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ static void	ft_draw_corner(int y_max, int x_max)
 	}
 }
 
-void	ft_draw_grid(int **tab)
+void		ft_draw_grid(int **tab)
 {
 	int		y_max;
 	int		x_max;
