@@ -6,7 +6,7 @@
 #    By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/01 22:16:59 by gbadi             #+#    #+#              #
-#    Updated: 2015/03/02 20:57:44 by dvolberg         ###   ########.fr        #
+#    Updated: 2015/03/03 02:51:07 by dvolberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,26 +14,31 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SOURCE = main.c\
-		ascii.c\
-		ascii2.c\
-		print_tout.c\
-		display.c\
-		draw.c\
-		ft_get_pair.c\
-		game.c\
-		horizontal.c\
-		input.c\
-		vertical.c\
-		play.c\
-		play2.c\
-		play3.c\
-		print.c\
-		print2.c\
-		print3.c\
-		tab.c\
-		printgameover.c\
-		printtitle.c
+SOURCE = main.c ft_print_tout.c display.c draw.c ft_get_pair.c color.c\
+		game.c horizontal.c input.c vertical.c play.c play2.c play3.c\
+		tab.c printgameover.c printtitle.c\
+		ascii/ascii_0.c\
+		ascii/ascii_1.c\
+		ascii/ascii_2.c\
+		ascii/ascii_3.c\
+		ascii/ascii_4.c\
+		ascii/ascii_5.c\
+		ascii/ascii_6.c\
+		ascii/ascii_7.c\
+		ascii/ascii_8.c\
+		ascii/ascii_9.c\
+		ascii/print_1024.c\
+		ascii/print_128.c\
+		ascii/print_16.c\
+		ascii/print_2.c\
+		ascii/print_2048.c\
+		ascii/print_256.c\
+		ascii/print_32.c\
+		ascii/print_4.c\
+		ascii/print_4096.c\
+		ascii/print_512.c\
+		ascii/print_64.c\
+		ascii/print_8.c
 
 SRCO = $(SOURCE:%.c=%.o)
 

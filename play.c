@@ -6,33 +6,11 @@
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 10:54:28 by dvolberg          #+#    #+#             */
-/*   Updated: 2015/03/02 23:47:16 by dvolberg         ###   ########.fr       */
+/*   Updated: 2015/03/03 02:47:01 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
-
-void		part2(void)
-{
-	attron(COLOR_PAIR(25));
-	mvprintw(9, (COLS / 2) - 31,
-		"      d8888*`  88888X   88888X   :F   8888R     \"*8888888888i  ");
-	attron(COLOR_PAIR(26));
-	mvprintw(10, (COLS / 2) - 31,
-		"    z8**\"`   : 88888X   88888f  x\"    8888R     .zf\"\"*8888888L ");
-	attron(COLOR_PAIR(27));
-	mvprintw(11, (COLS / 2) - 31,
-		"  :?.....  ..F 48888X   88888  d8eeeee88888eer d8F      ^%%888E ");
-	attron(COLOR_PAIR(28));
-	mvprintw(12, (COLS / 2) - 31,
-		" <\"\"888888888~  ?888X   8888\"         8888R    88>        `88~ ");
-	attron(COLOR_PAIR(29));
-	mvprintw(13, (COLS / 2) - 31,
-		" 8:  \"888888*    \"88X   88*`          8888R    '%%N.       d*\"  ");
-	attron(COLOR_PAIR(30));
-	mvprintw(14, (COLS / 2) - 31,
-		" \"\"    \"**\"`       ^\"===\"`         \"*%%%%%%%%%%%%**~    ^\"==");
-}
 
 int			youwin(t_env *env)
 {
@@ -100,10 +78,8 @@ int			play(t_env *env)
 			return (-1);
 		}
 		else if (env->ret == 1)
-		{
 			if (ft_pour_le_win_mec(env) == 42)
 				return (42);
-		}
 		env->ch = getch();
 		if (env->ch != -1)
 			env->tab = ft_keytrigger(env->ch, env);

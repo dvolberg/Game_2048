@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbadi <gbadi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 10:45:11 by dvolberg          #+#    #+#             */
-/*   Updated: 2015/03/01 21:30:18 by gbadi            ###   ########.fr       */
+/*   Updated: 2015/03/03 02:43:59 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-void	ft_draw_bg(int **tab, int y_max, int x_max)
+static void	ft_draw_bg(int **tab, int y_max, int x_max)
 {
 	int		y;
 	int		j;
@@ -38,7 +38,7 @@ void	ft_draw_bg(int **tab, int y_max, int x_max)
 	}
 }
 
-void	ft_draw_col(int y_max, int x_max)
+static void	ft_draw_col(int y_max, int x_max)
 {
 	int		y;
 	int		x;
@@ -58,7 +58,7 @@ void	ft_draw_col(int y_max, int x_max)
 	}
 }
 
-void	ft_draw_row(int y_max, int x_max)
+static void	ft_draw_row(int y_max, int x_max)
 {
 	int		y;
 	int		x;
@@ -78,7 +78,7 @@ void	ft_draw_row(int y_max, int x_max)
 	}
 }
 
-void	ft_draw_corner(int y_max, int x_max)
+static void	ft_draw_corner(int y_max, int x_max)
 {
 	int		y;
 	int		x;

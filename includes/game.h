@@ -6,7 +6,7 @@
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 01:34:36 by gbadi             #+#    #+#             */
-/*   Updated: 2015/03/02 23:37:47 by dvolberg         ###   ########.fr       */
+/*   Updated: 2015/03/03 02:49:16 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void					ft_putnbr_to_grid(int y_max, int x_max, int **tab);
 int						ft_print_tout(int val, int x, int y);
 void					gameover(int x);
 int						ft_get_pair(int val);
-void					printtitle(int x);
+void					printtitle();
 void					printgameover(int x);
 void					print_2(int y, int x);
 void					print_8(int y, int x);
@@ -103,11 +103,8 @@ void					ascii_1024(int y, int x);
 void					ascii_2048(int y, int x);
 void					ascii_4096(int y, int x);
 void					free_env(t_env *e);
-void					part2(void);
 int						play(t_env *env);
 void					printwin(void);
-void					color_init_init(void);
 void					gameover(int x);
-void					printtitle(int x);
 
 #endif

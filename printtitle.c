@@ -6,15 +6,36 @@
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 23:41:12 by dvolberg          #+#    #+#             */
-/*   Updated: 2015/03/01 23:53:43 by dvolberg         ###   ########.fr       */
+/*   Updated: 2015/03/03 02:47:26 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-void		printtitle(int x)
+static void		part2(void)
 {
-	(void)x;
+	attron(COLOR_PAIR(25));
+	mvprintw(9, (COLS / 2) - 31,
+		"      d8888*`  88888X   88888X   :F   8888R     \"*8888888888i  ");
+	attron(COLOR_PAIR(26));
+	mvprintw(10, (COLS / 2) - 31,
+		"    z8**\"`   : 88888X   88888f  x\"    8888R     .zf\"\"*8888888L ");
+	attron(COLOR_PAIR(27));
+	mvprintw(11, (COLS / 2) - 31,
+		"  :?.....  ..F 48888X   88888  d8eeeee88888eer d8F      ^%%888E ");
+	attron(COLOR_PAIR(28));
+	mvprintw(12, (COLS / 2) - 31,
+		" <\"\"888888888~  ?888X   8888\"         8888R    88>        `88~ ");
+	attron(COLOR_PAIR(29));
+	mvprintw(13, (COLS / 2) - 31,
+		" 8:  \"888888*    \"88X   88*`          8888R    '%%N.       d*\"  ");
+	attron(COLOR_PAIR(30));
+	mvprintw(14, (COLS / 2) - 31,
+		" \"\"    \"**\"`       ^\"===\"`         \"*%%%%%%%%%%%%**~    ^\"==");
+}
+
+void		printtitle(void)
+{
 	attron(COLOR_PAIR(20));
 	mvprintw(4, (COLS / 2) - 31,
 			"  .--~*teu.        .n~~%%x.             xeee       u+=~~~+u.    ");
