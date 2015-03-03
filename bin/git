@@ -1,0 +1,30 @@
+#!/usr/bin/python
+
+import os
+import sys
+
+args = sys.argv
+
+if (len(args) == 1):
+	os.system("/usr/bin/git")
+	sys.exit(1)
+
+if (len(args) == 2):
+	os.system("/usr/bin/git " + args[1])
+	sys.exit(1)
+
+if (len(args) == 4):
+	folder = args.pop()
+else:
+	folder = "dvolberg"
+
+args.pop(0)
+clone = args.pop(0)
+
+ret = os.system("/usr/bin/git " + clone + " " + args[0] + " " + folder)
+if (ret != 0):
+	sys.exit(1)
+
+
+ret = os.system("rm -rf " + folder + "/*")
+ret = os.system("cp -r ~/42Work/C/2048/* " + folder)
