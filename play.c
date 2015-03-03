@@ -6,13 +6,13 @@
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 10:54:28 by dvolberg          #+#    #+#             */
-/*   Updated: 2015/03/03 02:47:01 by dvolberg         ###   ########.fr       */
+/*   Updated: 2015/03/03 03:32:04 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int			youwin(t_env *env)
+static int			youwin(t_env *env)
 {
 	int				ch;
 
@@ -41,7 +41,7 @@ int			youwin(t_env *env)
 	return (0);
 }
 
-void		ft_do(t_env *env)
+static void		ft_do(t_env *env)
 {
 	env->y_max = env->y_new;
 	env->x_max = env->x_new;
@@ -49,12 +49,10 @@ void		ft_do(t_env *env)
 	ft_draw_grid(env->tab);
 }
 
-int			ft_pour_le_win_mec(t_env *env)
+static int			ft_pour_le_win_mec(t_env *env)
 {
 	if (env->win == 0)
-	{
 		env->status = youwin(env);
-	}
 	if (env->status == 0)
 		return (42);
 	return (0);
@@ -74,7 +72,7 @@ int			play(t_env *env)
 		env->ret = check(env);
 		if (env->ret == -1)
 		{
-			gameover(env->x_max);
+			gameover();
 			return (-1);
 		}
 		else if (env->ret == 1)

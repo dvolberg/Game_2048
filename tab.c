@@ -6,13 +6,13 @@
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 00:29:38 by gbadi             #+#    #+#             */
-/*   Updated: 2015/03/01 18:26:34 by dvolberg         ###   ########.fr       */
+/*   Updated: 2015/03/03 03:07:34 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int					full(t_env *env)
+static int					full(t_env *env)
 {
 	int				i;
 	int				j;

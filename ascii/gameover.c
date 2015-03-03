@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play2.c                                            :+:      :+:    :+:   */
+/*   gameover.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 18:01:29 by dvolberg          #+#    #+#             */
-/*   Updated: 2015/03/02 21:51:29 by dvolberg         ###   ########.fr       */
+/*   Updated: 2015/03/03 03:26:26 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-void part_1(void)
+static void part_1(void)
 {
 	attron(COLOR_PAIR(20));
 	mvprintw (10, (COLS / 2) - 32,
@@ -40,7 +40,7 @@ void part_1(void)
 		"?8888X   ?8888>'8888X 9888  9888    X888  888X '888>  8888.+\"    ");
 }
 
-void part_2(void)
+static void part_2(void)
 {
 	attron(COLOR_PAIR(22));
 	mvprintw (18, (COLS / 2) - 32,
@@ -67,7 +67,7 @@ void part_2(void)
 		"   H8X 888888888h.    88Nu.   u.                .u    .   ");
 }
 
-void part_3(void)
+static void part_3(void)
 {
 	mvprintw (26, (COLS / 2) - 32,
 		"  8888:`*888888888:  '88888.o888c      .u     .d88B :@8c  ");
@@ -85,9 +85,8 @@ void part_3(void)
 		"  ~*??.            >   8888  8888 8888.+\"      4888>      ");
 }
 
-void printgameover(int x)
+static void printgameover(void)
 {
-	(void)x;
 	part_1();
 	part_2();
 	part_3();
@@ -104,4 +103,24 @@ void printgameover(int x)
 	attron(COLOR_PAIR(27));
 	mvprintw (34, (COLS / 2) - 32,
 		"        \"\"***\"\"                      \"YP'                 ");
+}
+
+void			gameover(void)
+{
+	int			ch;
+
+	ch = 0;
+	wclear(stdscr);
+	wrefresh(stdscr);
+	while (1)
+	{
+		ch = getch();
+		printgameover();
+		if (ch == 'q' || ch == 'Q' || ch == 27 || ch == 10)
+		{
+			endwin();
+			break ;
+		}
+		refresh();
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:20:56 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/03 02:42:41 by dvolberg         ###   ########.fr       */
+/*   Updated: 2015/03/03 03:49:50 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,17 @@ void	ft_putnbr_to_grid(int y_max, int x_max, int **tab)
 		{
 			if (tab[i][j] != 3)
 			{
-				if (!ft_print_tout(tab[i][j], x, y))
-					ft_print_ascii(y, x, tab[i][j]);
+				if (y_max >= 40 || x_max >= 40)
+				{
+					if (!ft_print_tout(tab[i][j], x, y))
+						ft_print_ascii(y, x, tab[i][j]);
+				}
+				else
+				{
+					mvprintw(1, 1, "Serieusement !!");
+					endwin();
+					exit(-1);
+				}
 			}
 			x += (x_max / SIZE);
 			j++;

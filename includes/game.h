@@ -6,7 +6,7 @@
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 01:34:36 by gbadi             #+#    #+#             */
-/*   Updated: 2015/03/03 02:49:16 by dvolberg         ###   ########.fr       */
+/*   Updated: 2015/03/03 03:27:26 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,9 @@ int						**ft_keytrigger(int key_press, t_env *env);
 int						check(t_env *env);
 void					ft_putnbr_to_grid(int y_max, int x_max, int **tab);
 int						ft_print_tout(int val, int x, int y);
-void					gameover(int x);
+void					gameover(void);
 int						ft_get_pair(int val);
 void					printtitle();
-void					printgameover(int x);
 void					print_2(int y, int x);
 void					print_8(int y, int x);
 void					print_4(int y, int x);
@@ -105,6 +104,5 @@ void					ascii_4096(int y, int x);
 void					free_env(t_env *e);
 int						play(t_env *env);
 void					printwin(void);
-void					gameover(int x);
 
 #endif
