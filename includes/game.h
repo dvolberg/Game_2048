@@ -6,7 +6,7 @@
 /*   By: dvolberg <dvolberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 01:34:36 by dvolberg          #+#    #+#             */
-/*   Updated: 2015/03/03 07:15:13 by dvolberg         ###   ########.fr       */
+/*   Updated: 2015/03/03 09:15:19 by dvolberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-# define EMPTY 			3
+# define EMPTY			3
 # define COLOR_EMPTY	(13)
 # define COLOR_BG		(15)
 # define COLOR_2		(31)
@@ -41,8 +41,8 @@
 
 typedef struct			s_env
 {
-	int					**tab;
-	int					win;
+	int 				**tab;
+	int 				win;
 	int					ret;
 	int					ch;
 	size_t				score;
