@@ -1,6 +1,6 @@
-# 2048
+# game_2048
 
-This repository contains the 2048 rush of 42
+This repository contains the __game_2048__ rush of 42
 
 Usage:  
 	
