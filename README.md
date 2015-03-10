@@ -7,8 +7,8 @@ Usage:
 	make
 	./game_2048  
 
-Enjoy it! 
-Some Screenshot.
+Enjoy it!  
+Feedbacks, github issues and pull requests are welcome.  
 
 <img src="https://raw.githubusercontent.com/dvolberg/2048/master/2048.png">
 <img src="https://raw.githubusercontent.com/dvolberg/2048/master/game.png">
